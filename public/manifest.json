@@ -1,0 +1,11 @@
+{
+  "name": "Customer Questions by Asyntai",
+  "description": "Put the real questions your website visitors ask on the Penpot canvas, grouped and counted, as cards.",
+  "version": 2,
+  "code": "plugin.js",
+  "icon": "icon.png",
+  "permissions": [
+    "content:write",
+    "allow:localstorage"
+  ]
+}

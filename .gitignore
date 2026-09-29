@@ -1,0 +1,7 @@
+node_modules/
+test/.penpot_*
+test/shots/
+test/real-sessions.json
+test/_figma_lib.html
+listing/raw/
+listing/LISTING.md

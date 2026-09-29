@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Customer Questions by Asyntai</title>
+<style>
+    :root {
+        --bg: #ffffff;
+        --bg-field: #ffffff;
+        --text: #000000;
+        --muted: #666666;
+        --border: #d9d9d9;
+        --focus: #000000;
+        --danger: #b3261e;
+        --button-bg: #000000;
+        --button-text: #ffffff;
+    }
+    [data-theme="dark"] {
+        --bg: #18181a;
+        --bg-field: #212426;
+        --text: #e8e9ea;
+        --muted: #a0a3a6;
+        --border: #3a3d40;
+        --focus: #e8e9ea;
+        --danger: #ff8a80;
+        --button-bg: #ffffff;
+        --button-text: #000000;
+    }
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        padding: 16px;
+        font-family: "Work Sans", -apple-system, system-ui, sans-serif;
+        font-size: 12px;
+        color: var(--text);
+        background: var(--bg);
+    }
+    h1 { font-size: 13px; font-weight: 600; margin: 0 0 4px; }
+    p.sub { margin: 0 0 16px; color: var(--muted); line-height: 1.45; }
+    label { display: block; font-weight: 500; margin: 0 0 6px; }
+    input, select {
+        width: 100%;
+        height: 32px;
+        padding: 0 8px;
+        font-family: inherit;
+        font-size: 12px;
+        color: var(--text);
+        background: var(--bg-field);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        outline: none;
+    }
+    input:focus, select:focus { border-color: var(--focus); }
+    .field { margin-bottom: 14px; }
+    .row { display: flex; gap: 10px; }
+    .row .field { flex: 1; }
+    button {
+        width: 100%;
+        height: 34px;
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--button-text);
+        background: var(--button-bg);
+        border: 0;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:disabled { opacity: 0.4; cursor: default; }
+    button.ghost {
+        color: var(--muted);
+        background: transparent;
+        font-weight: 400;
+        height: 26px;
+        margin-top: 10px;
+    }
+    .msg { margin-top: 12px; line-height: 1.45; }
+    .msg.error { color: var(--danger); }
+    .msg.muted { color: var(--muted); }
+    .hidden { display: none; }
+    a { color: inherit; }
+    .foot { margin-top: 18px; color: var(--muted); line-height: 1.45; }
+</style>
+</head>
+<body>
+
+<div id="connect">
+    <h1>Connect Asyntai</h1>
+    <p class="sub">Paste the API key from your Asyntai dashboard, under Settings, then API.</p>
+    <div class="field">
+        <label for="key">API key</label>
+        <input id="key" type="password" placeholder="asy_..." autocomplete="off" />
+    </div>
+    <button id="connect-btn">Connect</button>
+    <div id="connect-msg" class="msg"></div>
+    <p class="foot">No account yet? <a href="https://asyntai.com/register/" target="_blank" rel="noopener">Create one on Asyntai</a>.</p>
+</div>
+
+<div id="main" class="hidden">
+    <h1>Visitor questions</h1>
+    <p class="sub">Put the questions people asked your chatbot on the canvas.</p>
+    <div class="field">
+        <label for="site">Website</label>
+        <select id="site"></select>
+    </div>
+    <div class="row">
+        <div class="field">
+            <label for="range">Period</label>
+            <select id="range">
+                <option value="7">Last 7 days</option>
+                <option value="30" selected>Last 30 days</option>
+                <option value="90">Last 90 days</option>
+                <option value="0">All time</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="count">Questions</label>
+            <select id="count">
+                <option value="10">10</option>
+                <option value="25" selected>25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+    </div>
+    <button id="add-btn">Add to canvas</button>
+    <button id="forget-btn" class="ghost">Use another API key</button>
+    <div id="main-msg" class="msg"></div>
+</div>
+
+<script id="asyntai-lib">
+    // Pure helpers. The test harness runs this block on its own, so it must not
+    // touch the document or the network.
+    var ASYNTAI_MAX_QUESTION = 160;
+
+    function truncate(text, max) {
+        text = (text || '').replace(/\s+/g, ' ').trim();
+        if (text.length <= max) {
+            return text;
+        }
+        return text.slice(0, max - 1).trim() + '…';
+    }
+
+    // Two visitors ask the same thing in different words, so the key drops
+    // case, accents and punctuation before counting.
+    function questionKey(text) {
+        return (text || '')
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[̀-ͯ]/g, '')
+            .replace(/[^a-z0-9 ]+/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function pagePath(url) {
+        if (!url) {
+            return '';
+        }
+        // Chats that arrive from an inbox or an app carry an internal address
+        // instead of a page, and that is no use on a card.
+        var match = String(url).match(/^https?:\/\/[^/]+(\/[^?#]*)?/);
+        if (!match) {
+            return '';
+        }
+        var path = match[1] || '/';
+        return path.length > 1 && path.charAt(path.length - 1) === '/'
+            ? path.slice(0, -1)
+            : path;
+    }
+
+    function metaLine(session, count) {
+        var parts = [];
+        if (count > 1) {
+            parts.push('asked ' + count + ' times');
+        }
+        var path = pagePath(session.page_url);
+        if (path) {
+            parts.push(path);
+        }
+        if (session.country) {
+            parts.push(session.country);
+        }
+        if (session.category) {
+            parts.push(session.category);
+        }
+        return parts.join('  ·  ');
+    }
+
+    // Asyntai writes a marker row when a visitor leaves an email address or a
+    // phone number. Those rows are not questions, and they carry the contact
+    // detail itself, so they never reach the canvas.
+    var ASYNTAI_MARKER = /^\s*\[[A-Z_]{3,}\]/;
+    var ASYNTAI_EMAIL = /[\w.+-]+@[\w-]+\.[\w.]+/;
+    var ASYNTAI_PHONE = /(?:^|\s)\+?\d[\d ()-]{7,}\d(?=\s|$)/;
+
+    function isRealQuestion(text) {
+        if (!text || ASYNTAI_MARKER.test(text)) {
+            return false;
+        }
+        if (ASYNTAI_EMAIL.test(text) || ASYNTAI_PHONE.test(text)) {
+            return false;
+        }
+        // A one word opener such as "hello" says nothing on a card. A short
+        // word keeps its place when it carries a question mark, as "Pricing?"
+        // does.
+        var clean = text.trim();
+        if (clean.indexOf('?') === -1 && clean.length <= 12
+            && clean.split(/\s+/).length === 1) {
+            return false;
+        }
+        return true;
+    }
+
+    // One card per distinct question, the most asked first.
+    function groupQuestions(sessions, limit) {
+        var order = [];
+        var byKey = {};
+        for (var i = 0; i < (sessions || []).length; i++) {
+            var session = sessions[i];
+            if (!isRealQuestion(session.first_message)) {
+                continue;
+            }
+            var question = truncate(session.first_message, ASYNTAI_MAX_QUESTION);
+            if (question.length < 3) {
+                continue;
+            }
+            var key = questionKey(question);
+            if (!key) {
+                continue;
+            }
+            if (!byKey[key]) {
+                byKey[key] = { session: session, question: question, count: 0 };
+                order.push(key);
+            }
+            byKey[key].count += 1;
+        }
+        var groups = [];
+        for (var j = 0; j < order.length; j++) {
+            groups.push(byKey[order[j]]);
+        }
+        groups.sort(function (a, b) { return b.count - a.count; });
+        return groups.slice(0, limit).map(function (group) {
+            return {
+                question: group.question,
+                meta: metaLine(group.session, group.count),
+                count: group.count,
+            };
+        });
+    }
+
+    function sinceIso(days, now) {
+        if (!days) {
+            return '';
+        }
+        var base = now ? new Date(now) : new Date();
+        base.setUTCDate(base.getUTCDate() - days);
+        return base.toISOString().slice(0, 10);
+    }
+
+    function boardTitle(days) {
+        if (!days) {
+            return 'Visitor questions';
+        }
+        return 'Visitor questions, last ' + days + ' days';
+    }
+
+    // Penpot opens the panel as <host>/#/?theme=dark, so the theme can sit in
+    // the hash as well as in the query.
+    function themeFromQuery(search) {
+        var match = /[?&]theme=(dark|light)/.exec(search || '');
+        return match ? match[1] : 'light';
+    }
+
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = {
+            truncate: truncate,
+            questionKey: questionKey,
+            pagePath: pagePath,
+            metaLine: metaLine,
+            isRealQuestion: isRealQuestion,
+            groupQuestions: groupQuestions,
+            sinceIso: sinceIso,
+            boardTitle: boardTitle,
+            themeFromQuery: themeFromQuery,
+        };
+    }
+</script>
+
+<script>
+    var BASE = window.ASYNTAI_BASE || 'https://asyntai.com';
+    var apiKey = '';
+
+    var el = function (id) { return document.getElementById(id); };
+
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+    }
+
+    setTheme(themeFromQuery(window.location.search + window.location.hash));
+
+    function say(id, text, kind) {
+        var node = el(id);
+        node.textContent = text || '';
+        node.className = 'msg' + (kind ? ' ' + kind : '');
+    }
+
+    // Penpot hands the panel's messages to the plugin as they are, with no
+    // wrapper object.
+    function send(message) {
+        parent.postMessage(message, '*');
+    }
+
+    function call(path, key) {
+        return fetch(BASE + path, {
+            headers: { Authorization: 'Bearer ' + key },
+        }).then(function (response) {
+            return response.json().then(function (body) {
+                if (!response.ok || !body.success) {
+                    throw new Error(body.error || body.message || ('Asyntai answered ' + response.status));
+                }
+                return body;
+            });
+        });
+    }
+
+    function showMain(websites) {
+        el('connect').className = 'hidden';
+        el('main').className = '';
+        var select = el('site');
+        select.innerHTML = '';
+        var all = document.createElement('option');
+        all.value = '';
+        all.textContent = 'All websites';
+        select.appendChild(all);
+        websites.forEach(function (site) {
+            var option = document.createElement('option');
+            option.value = String(site.id);
+            option.textContent = site.domain;
+            select.appendChild(option);
+        });
+    }
+
+    function connect(key, quiet) {
+        if (!key) {
+            say('connect-msg', 'Paste your API key first.', 'error');
+            return;
+        }
+        if (!quiet) {
+            say('connect-msg', 'Checking...', 'muted');
+        }
+        call('/api/v1/websites/', key).then(function (body) {
+            apiKey = key;
+            send({ type: 'save-key', apiKey: key });
+            showMain(body.websites || []);
+            say('main-msg', '', '');
+        }).catch(function (error) {
+            say('connect-msg', error.message, 'error');
+            el('connect').className = '';
+            el('main').className = 'hidden';
+        });
+    }
+
+    el('connect-btn').onclick = function () {
+        connect(el('key').value.trim(), false);
+    };
+
+    el('key').onkeydown = function (event) {
+        if (event.key === 'Enter') {
+            connect(el('key').value.trim(), false);
+        }
+    };
+
+    el('forget-btn').onclick = function () {
+        apiKey = '';
+        el('key').value = '';
+        send({ type: 'forget-key' });
+        el('main').className = 'hidden';
+        el('connect').className = '';
+        say('connect-msg', '', '');
+    };
+
+    el('add-btn').onclick = function () {
+        var days = parseInt(el('range').value, 10);
+        var limit = parseInt(el('count').value, 10);
+        var siteId = el('site').value;
+        var query = '/api/v1/sessions/?limit=100';
+        if (siteId) {
+            query += '&website_id=' + encodeURIComponent(siteId);
+        }
+        var since = sinceIso(days);
+        if (since) {
+            query += '&since=' + since;
+        }
+        el('add-btn').disabled = true;
+        say('main-msg', 'Reading your chats...', 'muted');
+        call(query, apiKey).then(function (body) {
+            var items = groupQuestions(body.sessions || [], limit);
+            if (items.length === 0) {
+                el('add-btn').disabled = false;
+                say('main-msg', 'No chats in this period.', 'error');
+                return;
+            }
+            send({ type: 'insert', title: boardTitle(days), items: items });
+        }).catch(function (error) {
+            el('add-btn').disabled = false;
+            say('main-msg', error.message, 'error');
+        });
+    };
+
+    window.addEventListener('message', function (event) {
+        var message = event.data;
+        if (!message || typeof message.type !== 'string') {
+            return;
+        }
+        if (message.type === 'init') {
+            if (message.theme) {
+                setTheme(message.theme);
+            }
+            if (message.apiKey) {
+                el('key').value = message.apiKey;
+                connect(message.apiKey, true);
+            }
+            return;
+        }
+        if (message.type === 'theme') {
+            setTheme(message.theme);
+            return;
+        }
+        if (message.type === 'inserted') {
+            el('add-btn').disabled = false;
+            say('main-msg', message.count + ' questions are on the canvas.', 'muted');
+            return;
+        }
+        if (message.type === 'error') {
+            el('add-btn').disabled = false;
+            say('main-msg', message.message, 'error');
+        }
+    });
+
+    send({ type: 'ready' });
+</script>
+</body>
+</html>

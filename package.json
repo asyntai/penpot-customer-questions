@@ -1,0 +1,18 @@
+{
+  "name": "asyntai-penpot-plugin",
+  "version": "1.0.0",
+  "description": "Customer Questions by Asyntai: put real website visitor questions on the Penpot canvas.",
+  "scripts": {
+    "build": "esbuild src/plugin.ts --bundle --format=iife --target=es2020 --outfile=public/plugin.js",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node test/run.js"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@penpot/plugin-types": "^1.4.2",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  },
+  "private": true
+}

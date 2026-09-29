@@ -1,0 +1,713 @@
+[
+ {
+  "session_id": "demo_056",
+  "message_count": 3,
+  "first_message": "Which sleeping bag is warm enough for winter?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/collections/sleeping-bags/",
+  "country": "Norway",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_007",
+  "message_count": 3,
+  "first_message": "Do you ship to Germany?",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Germany",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_017",
+  "message_count": 3,
+  "first_message": "How long does delivery take?",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Austria",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_hi",
+  "message_count": 1,
+  "first_message": "hello",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/",
+  "country": "",
+  "category": ""
+ },
+ {
+  "session_id": "demo_014",
+  "message_count": 3,
+  "first_message": "How long does delivery take",
+  "last_message_at": "2026-09-24T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Austria",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_061",
+  "message_count": 3,
+  "first_message": "Can I pay by bank transfer?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/checkout/",
+  "country": "Czechia",
+  "category": "Checkout"
+ },
+ {
+  "session_id": "demo_004",
+  "message_count": 3,
+  "first_message": "do you ship to germany?",
+  "last_message_at": "2026-09-23T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Germany",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_070",
+  "message_count": 3,
+  "first_message": "What is the warranty on the tent poles?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/warranty/",
+  "country": "Spain",
+  "category": "Warranty"
+ },
+ {
+  "session_id": "demo_035",
+  "message_count": 3,
+  "first_message": "Is the tent waterproof?",
+  "last_message_at": "2026-09-24T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/trail-tent-2/",
+  "country": "Netherlands",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_024",
+  "message_count": 3,
+  "first_message": "Can I return an item after 30 days",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/returns/",
+  "country": "Czechia",
+  "category": "Returns"
+ },
+ {
+  "session_id": "demo_046",
+  "message_count": 3,
+  "first_message": "Can I change my delivery address?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/account/orders/",
+  "country": "Slovakia",
+  "category": "Orders"
+ },
+ {
+  "session_id": "demo_001",
+  "message_count": 3,
+  "first_message": "Do you ship to Germany?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Germany",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_057",
+  "message_count": 3,
+  "first_message": "Which sleeping bag is warm enough for winter",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/collections/sleeping-bags/",
+  "country": "Norway",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_043",
+  "message_count": 3,
+  "first_message": "Do you have a store I can visit?",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/contact/",
+  "country": "Austria",
+  "category": "Store"
+ },
+ {
+  "session_id": "demo_018",
+  "message_count": 3,
+  "first_message": "Can I return an item after 30 days?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/returns/",
+  "country": "Czechia",
+  "category": "Returns"
+ },
+ {
+  "session_id": "demo_077",
+  "message_count": 3,
+  "first_message": "Can I pick up my order in store?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/contact/",
+  "country": "Czechia",
+  "category": "Store"
+ },
+ {
+  "session_id": "demo_031",
+  "message_count": 3,
+  "first_message": "Is the tent waterproof?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/trail-tent-2/",
+  "country": "Netherlands",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_066",
+  "message_count": 3,
+  "first_message": "Do you repair zips",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/repairs/",
+  "country": "Germany",
+  "category": "Repairs"
+ },
+ {
+  "session_id": "demo_068",
+  "message_count": 3,
+  "first_message": "When is the blue fleece back in stock",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/alpine-fleece/",
+  "country": "Denmark",
+  "category": "Stock"
+ },
+ {
+  "session_id": "demo_002",
+  "message_count": 3,
+  "first_message": "do you ship to germany?",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Germany",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_030",
+  "message_count": 3,
+  "first_message": "Which size should I order for the rain jacket?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/rain-jacket/",
+  "country": "Poland",
+  "category": "Sizing"
+ },
+ {
+  "session_id": "demo_054",
+  "message_count": 3,
+  "first_message": "Do you offer gift wrapping",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/checkout/",
+  "country": "Belgium",
+  "category": "Checkout"
+ },
+ {
+  "session_id": "demo_067",
+  "message_count": 3,
+  "first_message": "When is the blue fleece back in stock?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/alpine-fleece/",
+  "country": "Denmark",
+  "category": "Stock"
+ },
+ {
+  "session_id": "demo_058",
+  "message_count": 3,
+  "first_message": "Which sleeping bag is warm enough for winter",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/collections/sleeping-bags/",
+  "country": "Norway",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_075",
+  "message_count": 3,
+  "first_message": "Can I track my parcel?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/account/orders/",
+  "country": "Hungary",
+  "category": "Orders"
+ },
+ {
+  "session_id": "demo_028",
+  "message_count": 3,
+  "first_message": "Which size should I order for the rain jacket",
+  "last_message_at": "2026-09-23T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/rain-jacket/",
+  "country": "Poland",
+  "category": "Sizing"
+ },
+ {
+  "session_id": "demo_lead",
+  "message_count": 2,
+  "first_message": "[EMAIL_SUBMITTED] someone@example.com",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/",
+  "country": "",
+  "category": ""
+ },
+ {
+  "session_id": "demo_038",
+  "message_count": 3,
+  "first_message": "Where is my order",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/account/orders/",
+  "country": "Germany",
+  "category": "Orders"
+ },
+ {
+  "session_id": "demo_015",
+  "message_count": 3,
+  "first_message": "How long does delivery take?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Austria",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_026",
+  "message_count": 3,
+  "first_message": "which size should i order for the rain jacket?",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/rain-jacket/",
+  "country": "Poland",
+  "category": "Sizing"
+ },
+ {
+  "session_id": "demo_049",
+  "message_count": 3,
+  "first_message": "Can I change my delivery address?",
+  "last_message_at": "2026-09-23T10:00:00+00:00",
+  "page_url": "https://shop.example.com/account/orders/",
+  "country": "Slovakia",
+  "category": "Orders"
+ },
+ {
+  "session_id": "demo_040",
+  "message_count": 3,
+  "first_message": "Where is my order?",
+  "last_message_at": "2026-09-23T10:00:00+00:00",
+  "page_url": "https://shop.example.com/account/orders/",
+  "country": "Germany",
+  "category": "Orders"
+ },
+ {
+  "session_id": "demo_023",
+  "message_count": 3,
+  "first_message": "Can I return an item after 30 days?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/returns/",
+  "country": "Czechia",
+  "category": "Returns"
+ },
+ {
+  "session_id": "demo_042",
+  "message_count": 3,
+  "first_message": "Do you have a store I can visit?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/contact/",
+  "country": "Austria",
+  "category": "Store"
+ },
+ {
+  "session_id": "demo_021",
+  "message_count": 3,
+  "first_message": "Can I return an item after 30 days?",
+  "last_message_at": "2026-09-23T10:00:00+00:00",
+  "page_url": "https://shop.example.com/returns/",
+  "country": "Czechia",
+  "category": "Returns"
+ },
+ {
+  "session_id": "demo_036",
+  "message_count": 3,
+  "first_message": "Is the tent waterproof",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/trail-tent-2/",
+  "country": "Netherlands",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_062",
+  "message_count": 3,
+  "first_message": "Can I pay by bank transfer?",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/checkout/",
+  "country": "Czechia",
+  "category": "Checkout"
+ },
+ {
+  "session_id": "demo_003",
+  "message_count": 3,
+  "first_message": "Do you ship to Germany?",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Germany",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_044",
+  "message_count": 3,
+  "first_message": "Do you have a store I can visit",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/contact/",
+  "country": "Austria",
+  "category": "Store"
+ },
+ {
+  "session_id": "demo_053",
+  "message_count": 3,
+  "first_message": "Do you offer gift wrapping?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/checkout/",
+  "country": "Belgium",
+  "category": "Checkout"
+ },
+ {
+  "session_id": "demo_010",
+  "message_count": 3,
+  "first_message": "How long does delivery take?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Austria",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_052",
+  "message_count": 3,
+  "first_message": "Are the hiking boots true to size?",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/ridge-boots/",
+  "country": "France",
+  "category": "Sizing"
+ },
+ {
+  "session_id": "demo_011",
+  "message_count": 3,
+  "first_message": "how long does delivery take?",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Austria",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_072",
+  "message_count": 3,
+  "first_message": "Is there a student discount?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com//",
+  "country": "Ireland",
+  "category": "Offers"
+ },
+ {
+  "session_id": "demo_033",
+  "message_count": 3,
+  "first_message": "Is the tent waterproof",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/trail-tent-2/",
+  "country": "Netherlands",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_074",
+  "message_count": 3,
+  "first_message": "How warm is the merino base layer?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/merino-base/",
+  "country": "Finland",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_005",
+  "message_count": 3,
+  "first_message": "Do you ship to Germany",
+  "last_message_at": "2026-09-24T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Germany",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_076",
+  "message_count": 3,
+  "first_message": "Do you sell kids' rain gear?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/collections/kids/",
+  "country": "Austria",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_019",
+  "message_count": 3,
+  "first_message": "can i return an item after 30 days?",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/returns/",
+  "country": "Czechia",
+  "category": "Returns"
+ },
+ {
+  "session_id": "demo_029",
+  "message_count": 3,
+  "first_message": "Which size should I order for the rain jacket?",
+  "last_message_at": "2026-09-24T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/rain-jacket/",
+  "country": "Poland",
+  "category": "Sizing"
+ },
+ {
+  "session_id": "demo_065",
+  "message_count": 3,
+  "first_message": "Do you repair zips?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/repairs/",
+  "country": "Germany",
+  "category": "Repairs"
+ },
+ {
+  "session_id": "demo_022",
+  "message_count": 3,
+  "first_message": "Can I return an item after 30 days?",
+  "last_message_at": "2026-09-24T10:00:00+00:00",
+  "page_url": "https://shop.example.com/returns/",
+  "country": "Czechia",
+  "category": "Returns"
+ },
+ {
+  "session_id": "demo_032",
+  "message_count": 3,
+  "first_message": "Is the tent waterproof",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/trail-tent-2/",
+  "country": "Netherlands",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_034",
+  "message_count": 3,
+  "first_message": "Is the tent waterproof",
+  "last_message_at": "2026-09-23T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/trail-tent-2/",
+  "country": "Netherlands",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_020",
+  "message_count": 3,
+  "first_message": "can i return an item after 30 days?",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/returns/",
+  "country": "Czechia",
+  "category": "Returns"
+ },
+ {
+  "session_id": "demo_037",
+  "message_count": 3,
+  "first_message": "Where is my order?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/account/orders/",
+  "country": "Germany",
+  "category": "Orders"
+ },
+ {
+  "session_id": "demo_006",
+  "message_count": 3,
+  "first_message": "Do you ship to Germany?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Germany",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_063",
+  "message_count": 3,
+  "first_message": "Is the backpack carry-on size?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/daypack-28/",
+  "country": "Italy",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_050",
+  "message_count": 3,
+  "first_message": "Are the hiking boots true to size?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/ridge-boots/",
+  "country": "France",
+  "category": "Sizing"
+ },
+ {
+  "session_id": "demo_045",
+  "message_count": 3,
+  "first_message": "Do you have a store I can visit?",
+  "last_message_at": "2026-09-23T10:00:00+00:00",
+  "page_url": "https://shop.example.com/contact/",
+  "country": "Austria",
+  "category": "Store"
+ },
+ {
+  "session_id": "demo_012",
+  "message_count": 3,
+  "first_message": "How long does delivery take",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Austria",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_051",
+  "message_count": 3,
+  "first_message": "Are the hiking boots true to size",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/ridge-boots/",
+  "country": "France",
+  "category": "Sizing"
+ },
+ {
+  "session_id": "demo_016",
+  "message_count": 3,
+  "first_message": "How long does delivery take?",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Austria",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_039",
+  "message_count": 3,
+  "first_message": "where is my order?",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/account/orders/",
+  "country": "Germany",
+  "category": "Orders"
+ },
+ {
+  "session_id": "demo_047",
+  "message_count": 3,
+  "first_message": "can i change my delivery address?",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/account/orders/",
+  "country": "Slovakia",
+  "category": "Orders"
+ },
+ {
+  "session_id": "demo_059",
+  "message_count": 3,
+  "first_message": "How do I clean a down jacket?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/summit-down-jacket/",
+  "country": "Sweden",
+  "category": "Care"
+ },
+ {
+  "session_id": "demo_060",
+  "message_count": 3,
+  "first_message": "How do I clean a down jacket?",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/summit-down-jacket/",
+  "country": "Sweden",
+  "category": "Care"
+ },
+ {
+  "session_id": "demo_041",
+  "message_count": 3,
+  "first_message": "Where is my order?",
+  "last_message_at": "2026-09-24T10:00:00+00:00",
+  "page_url": "https://shop.example.com/account/orders/",
+  "country": "Germany",
+  "category": "Orders"
+ },
+ {
+  "session_id": "demo_055",
+  "message_count": 3,
+  "first_message": "do you offer gift wrapping?",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/checkout/",
+  "country": "Belgium",
+  "category": "Checkout"
+ },
+ {
+  "session_id": "demo_069",
+  "message_count": 3,
+  "first_message": "Can I exchange boots for a bigger size?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/returns/",
+  "country": "Poland",
+  "category": "Returns"
+ },
+ {
+  "session_id": "demo_064",
+  "message_count": 3,
+  "first_message": "Is the backpack carry-on size",
+  "last_message_at": "2026-09-21T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/daypack-28/",
+  "country": "Italy",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_027",
+  "message_count": 3,
+  "first_message": "Which size should I order for the rain jacket?",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/rain-jacket/",
+  "country": "Poland",
+  "category": "Sizing"
+ },
+ {
+  "session_id": "demo_008",
+  "message_count": 3,
+  "first_message": "Do you ship to Germany",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Germany",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_073",
+  "message_count": 3,
+  "first_message": "Which stove works at high altitude?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/collections/stoves/",
+  "country": "Switzerland",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_009",
+  "message_count": 3,
+  "first_message": "Do you ship to Germany?",
+  "last_message_at": "2026-09-23T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Germany",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_071",
+  "message_count": 3,
+  "first_message": "Do the trekking poles fold small enough for a suitcase?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/carbon-poles/",
+  "country": "Portugal",
+  "category": "Product"
+ },
+ {
+  "session_id": "demo_013",
+  "message_count": 3,
+  "first_message": "How long does delivery take?",
+  "last_message_at": "2026-09-23T10:00:00+00:00",
+  "page_url": "https://shop.example.com/shipping/",
+  "country": "Austria",
+  "category": "Shipping"
+ },
+ {
+  "session_id": "demo_048",
+  "message_count": 3,
+  "first_message": "can i change my delivery address?",
+  "last_message_at": "2026-09-22T10:00:00+00:00",
+  "page_url": "https://shop.example.com/account/orders/",
+  "country": "Slovakia",
+  "category": "Orders"
+ },
+ {
+  "session_id": "demo_025",
+  "message_count": 3,
+  "first_message": "Which size should I order for the rain jacket?",
+  "last_message_at": "2026-09-20T10:00:00+00:00",
+  "page_url": "https://shop.example.com/products/rain-jacket/",
+  "country": "Poland",
+  "category": "Sizing"
+ }
+]
